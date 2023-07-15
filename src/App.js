@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import {Routes, Route} from 'react-router-dom'
+import Navbar from './pages/Navbar';
+import NewsPage from './pages/News';
+import NoticesPage from './pages/Notices';
+import PlacementPage from './pages/PlacementHighlights';
+import ResearchHighlightsPage from './pages/ResearchHighlights';
+import StoriesPage from './pages/Stories';
+import TendersPage from './pages/Tenders';
+import Home from './pages/Home';
+import PlacementElement from './pages/Company';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar/>
+      <Routes>
+      <Route path='/' element={<Home/>}/>
+        <Route path='/notices' element={<NoticesPage/>}/>
+        <Route path='/news' element={<NewsPage/>}/>
+        <Route path='/placement-highlights' element={<PlacementPage/>}/>
+        <Route path='/research-details' element={<ResearchHighlightsPage/>}/>
+        <Route path='/tenders' element={<TendersPage/>}/>
+        <Route path='/stories' element={<StoriesPage/>}/>
+        <Route path='/placement' element={<PlacementElement/>}/>
+
+</Routes>
     </div>
   );
 }
